@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using MVVM.Views;
 using MvvmDemo;
 
 namespace MVVM.ViewModels
@@ -10,6 +11,12 @@ namespace MVVM.ViewModels
 
         private PlaylistViewModel _selectedPlaylist;
 
+        private readonly IPageService _pageService;
+
+        public PlaylistsViewModel(IPageService pageService)
+        {
+            this._pageService = pageService;
+        }
         public PlaylistViewModel SelectedPlaylist
         {
             get { return _selectedPlaylist; }
@@ -23,7 +30,7 @@ namespace MVVM.ViewModels
             Playlists.Add(new PlaylistViewModel { Title = newPlaylist });
         }
 
-        public void SelectPlaylist(PlaylistViewModel playlist)
+        public async void SelectPlaylist(PlaylistViewModel playlist)
         {
 
             if (playlist == null)
@@ -33,7 +40,7 @@ namespace MVVM.ViewModels
 
             SelectedPlaylist = null;
 
-            //await Navigation.PushAsync (new PlaylistDetailPage(playlist));
+            await _pageService.PushAsync (new PlaylistDetailPage(playlist));
         }
     }
 }

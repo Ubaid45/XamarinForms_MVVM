@@ -8,7 +8,7 @@ namespace MvvmDemo
     {
         public PlaylistsPage ()
         {
-            BindingContext = new PlaylistsViewModel();
+            BindingContext = new PlaylistsViewModel(new PageService());
 
             InitializeComponent ();
         }
