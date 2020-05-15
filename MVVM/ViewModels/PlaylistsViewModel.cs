@@ -1,7 +1,7 @@
-﻿using System;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
+using System.Windows.Input;
 using MVVM.Views;
-using MvvmDemo;
+using Xamarin.Forms;
 
 namespace MVVM.ViewModels
 {
@@ -13,9 +13,13 @@ namespace MVVM.ViewModels
 
         private readonly IPageService _pageService;
 
+        public ICommand AddPlaylistCommand { get; set; }
+
         public PlaylistsViewModel(IPageService pageService)
         {
-            this._pageService = pageService;
+            _pageService = pageService;
+
+            AddPlaylistCommand = new Command(AddPlaylist);
         }
         public PlaylistViewModel SelectedPlaylist
         {
@@ -23,7 +27,7 @@ namespace MVVM.ViewModels
             set { SetValue(ref _selectedPlaylist, value); }
         }
 
-        public void AddPlaylist()
+        private void AddPlaylist()
         {
             var newPlaylist = "Playlist " + (Playlists.Count + 1);
 

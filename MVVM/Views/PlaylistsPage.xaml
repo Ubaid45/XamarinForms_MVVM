@@ -6,7 +6,7 @@
     Title="{Binding Path=Playlists.Count, StringFormat='{0} Playlists'}">
 
 	<ContentPage.ToolbarItems>
-		<ToolbarItem Text="Add" Clicked="OnAddPlaylist" />
+		<ToolbarItem Text="Add" Command="{Binding AddPlaylistCommand}" />
 	</ContentPage.ToolbarItems>
 	
 	<ListView
