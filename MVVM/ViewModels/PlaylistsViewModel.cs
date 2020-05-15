@@ -1,4 +1,6 @@
 ﻿using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using MVVM.Views;
 using Xamarin.Forms;
@@ -14,12 +16,15 @@ namespace MVVM.ViewModels
         private readonly IPageService _pageService;
 
         public ICommand AddPlaylistCommand { get; set; }
+        public ICommand SelectPlaylistCommand { get; private set; }
 
         public PlaylistsViewModel(IPageService pageService)
         {
             _pageService = pageService;
 
             AddPlaylistCommand = new Command(AddPlaylist);
+            SelectPlaylistCommand = new Command<PlaylistViewModel>(async vm => await SelectPlaylist(vm));
+
         }
         public PlaylistViewModel SelectedPlaylist
         {
@@ -34,9 +39,8 @@ namespace MVVM.ViewModels
             Playlists.Add(new PlaylistViewModel { Title = newPlaylist });
         }
 
-        public async void SelectPlaylist(PlaylistViewModel playlist)
+        private async Task SelectPlaylist(PlaylistViewModel playlist)
         {
-
             if (playlist == null)
                 return;
 
