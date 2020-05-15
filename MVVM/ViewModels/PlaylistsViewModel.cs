@@ -9,11 +9,16 @@ namespace MVVM.ViewModels
 {
     public class PlaylistsViewModel : BaseViewModel
     {
+        private PlaylistViewModel _selectedPlaylist;
+        private readonly IPageService _pageService;
+
         public ObservableCollection<PlaylistViewModel> Playlists { get; private set; } = new ObservableCollection<PlaylistViewModel>();
 
-        private PlaylistViewModel _selectedPlaylist;
-
-        private readonly IPageService _pageService;
+        public PlaylistViewModel SelectedPlaylist
+        {
+            get { return _selectedPlaylist; }
+            set { SetValue(ref _selectedPlaylist, value); }
+        }
 
         public ICommand AddPlaylistCommand { get; set; }
         public ICommand SelectPlaylistCommand { get; private set; }
@@ -25,11 +30,6 @@ namespace MVVM.ViewModels
             AddPlaylistCommand = new Command(AddPlaylist);
             SelectPlaylistCommand = new Command<PlaylistViewModel>(async vm => await SelectPlaylist(vm));
 
-        }
-        public PlaylistViewModel SelectedPlaylist
-        {
-            get { return _selectedPlaylist; }
-            set { SetValue(ref _selectedPlaylist, value); }
         }
 
         private void AddPlaylist()
