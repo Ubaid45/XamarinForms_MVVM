@@ -6,8 +6,6 @@ namespace MvvmDemo
 {
     public partial class PlaylistsPage : ContentPage
     {
-        private ObservableCollection<Playlist> _playlists = new ObservableCollection<Playlist> ();
-
         public PlaylistsPage ()
         {
             BindingContext = new PlaylistsViewModel();
@@ -27,7 +25,7 @@ namespace MvvmDemo
 
         void OnPlaylistSelected (object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
         {
-            (BindingContext as PlaylistsViewModel).SelectPlaylist(e.SelectedItem as Playlist);
+            (BindingContext as PlaylistsViewModel).SelectPlaylist(e.SelectedItem as PlaylistViewModel);
         }
     }
 }
