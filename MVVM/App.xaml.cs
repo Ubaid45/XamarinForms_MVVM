@@ -1,4 +1,5 @@
 ﻿using System;
+using ContactBook;
 using MvvmDemo;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -11,7 +12,7 @@ namespace MVVM
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage (new PlaylistsPage());
+            MainPage = new NavigationPage (new ContactsPage());
         }
 
         protected override void OnStart()
