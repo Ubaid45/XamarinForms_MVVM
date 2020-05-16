@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVVM.iOS", "MVVM.iOS\MVVM.i
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVVM", "MVVM\MVVM.csproj", "{4BEBC8FE-84B0-4DE1-9B0B-731F687F36E5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject", "UnitTestProject\UnitTestProject.csproj", "{F05FFE79-FF58-4BCF-97C3-81E563C710A1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,5 +55,17 @@ Global
 		{4BEBC8FE-84B0-4DE1-9B0B-731F687F36E5}.Debug|iPhone.Build.0 = Debug|Any CPU
 		{4BEBC8FE-84B0-4DE1-9B0B-731F687F36E5}.Release|iPhone.ActiveCfg = Release|Any CPU
 		{4BEBC8FE-84B0-4DE1-9B0B-731F687F36E5}.Release|iPhone.Build.0 = Release|Any CPU
+		{F05FFE79-FF58-4BCF-97C3-81E563C710A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F05FFE79-FF58-4BCF-97C3-81E563C710A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F05FFE79-FF58-4BCF-97C3-81E563C710A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F05FFE79-FF58-4BCF-97C3-81E563C710A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F05FFE79-FF58-4BCF-97C3-81E563C710A1}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{F05FFE79-FF58-4BCF-97C3-81E563C710A1}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{F05FFE79-FF58-4BCF-97C3-81E563C710A1}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{F05FFE79-FF58-4BCF-97C3-81E563C710A1}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{F05FFE79-FF58-4BCF-97C3-81E563C710A1}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{F05FFE79-FF58-4BCF-97C3-81E563C710A1}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{F05FFE79-FF58-4BCF-97C3-81E563C710A1}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{F05FFE79-FF58-4BCF-97C3-81E563C710A1}.Release|iPhone.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
